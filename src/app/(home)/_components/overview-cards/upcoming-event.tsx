@@ -55,7 +55,7 @@ export function UpcomingEventCard() {
 
   return (
     <div className="col-span-12 rounded-[10px] bg-white py-6 shadow-1 dark:bg-gray-dark dark:shadow-card xl:col-span-4">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 px-4">
         <Calendar className="w-6 h-6 mx-2 text-gray-600 dark:text-gray-300" />
         <h2 className="text-lg font-bold text-dark dark:text-white">
           Upcoming Events
