@@ -9,6 +9,7 @@ import { ChatsCard } from "./_components/chats-card";
 import { OverviewCardsGroup } from "./_components/overview-cards";
 import { OverviewCardsSkeleton } from "./_components/overview-cards/skeleton";
 import { RegionLabels } from "./_components/region-labels";
+import { WeatherCard } from "./_components/WeatherCard";
 import { TodoCard } from "./_components/overview-cards/todo";
 import { ArrowUpIcon } from "@/assets/icons";
 import { UpcomingEventCard } from "./_components/overview-cards/upcoming-event";
@@ -53,7 +54,9 @@ export default async function Home({ searchParams }: PropsType) {
           timeFrame={extractTimeFrame("used_devices")?.split(":")[1]}
         />
 
-        <RegionLabels />
+        <WeatherCard className="col-span-12 xl:col-span-7" />
+
+        {/* <RegionLabels /> */}
 
         <div className="col-span-12 grid xl:col-span-8">
           {/* <Suspense fallback={<TopChannelsSkeleton />}>
