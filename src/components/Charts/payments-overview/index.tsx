@@ -3,6 +3,7 @@ import { standardFormat } from "@/lib/format-number";
 import { cn } from "@/lib/utils";
 import { getHeartRateData } from "@/services/charts.services";
 import { HeartRateChart } from "./chart";
+import { Heart } from "@/app/(home)/_components/icons";
 
 type PropsType = {
   timeFrame?: string;
@@ -23,8 +24,8 @@ export async function HeartRateGraph({
       )}
     >
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <h2 className="text-body-2xlg font-bold text-dark dark:text-white">
-          Heart Rate
+        <h2 className="text-body-2xlg font-bold text-dark dark:text-white inline-flex items-center gap-x-4">
+        <Heart /> <div> Heart Rate </div>
         </h2>
 
         {/* <PeriodPicker defaultValue={timeFrame} sectionKey="heart_rate" /> */}
