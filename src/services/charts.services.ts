@@ -6,26 +6,36 @@ export async function getDevicesUsedData(
 
   const data = [
     {
-      name: "Desktop",
-      percentage: 0.65,
-      amount: 1625,
+      name: "Carbohydrates",
+      percentage: 0.55, 
+      amount: 1375,
     },
     {
-      name: "Tablet",
-      percentage: 0.1,
-      amount: 250,
+      name: "Proteins",
+      percentage: 0.15, 
+      amount: 375,
     },
     {
-      name: "Mobile",
-      percentage: 0.2,
+      name: "Fats",
+      percentage: 0.2, 
       amount: 500,
     },
     {
-      name: "Unknown",
-      percentage: 0.05,
+      name: "Vitamins & Minerals",
+      percentage: 0.05, 
       amount: 125,
     },
-  ];
+    {
+      name: "Fibers",
+      percentage: 0.03, 
+      amount: 75,
+    },
+    {
+      name: "Water",
+      percentage: 0.02, 
+      amount: 50,
+    },
+  ];  
 
   if (timeFrame === "yearly") {
     data[0].amount = 19500;
