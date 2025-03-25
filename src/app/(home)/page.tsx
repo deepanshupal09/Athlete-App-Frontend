@@ -12,6 +12,7 @@ import { RegionLabels } from "./_components/region-labels";
 import { WeatherCard } from "./_components/WeatherCard";
 import { TodoCard } from "./_components/overview-cards/todo";
 import { ArrowUpIcon } from "@/assets/icons";
+import { UpcomingEventCard } from "./_components/overview-cards/upcoming-event";
 
 type PropsType = {
   searchParams: Promise<{
@@ -19,7 +20,7 @@ type PropsType = {
   }>;
 };
 const sampleTask = {
-  title: "Complete UI Design",
+  title: "Gym session",
   dueDate: "2025-03-30",
   status: "In Progress" as "In Progress" | "Pending" | "Completed",
 };
@@ -64,9 +65,10 @@ export default async function Home({ searchParams }: PropsType) {
           <TodoCard task={sampleTask} Icon={ArrowUpIcon} />;
         </div>
 
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           <ChatsCard />
-        </Suspense>
+        </Suspense> */}
+      <UpcomingEventCard />
       </div>
     </>
   );
