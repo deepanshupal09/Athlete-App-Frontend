@@ -18,8 +18,7 @@ export function DonutChart({ data }: PropsType) {
       type: "donut",
       fontFamily: "inherit",
     },
-    colors: ["#ef476f", "#f78c6b", "#ffd166", "#06d6a0", "#118ab2", "#073b4c"],
-    // colors: ["#0077b6","#03045e","#caf0f8", "#90e0ef", "#00b4d8", "#023e8a"],
+    colors: ["#5750F1", "#5475E5", "#8099EC", "#ADBCF2"],
     labels: data.map((item) => item.name),
     legend: {
       show: true,
@@ -65,7 +64,7 @@ export function DonutChart({ data }: PropsType) {
         breakpoint: 2600,
         options: {
           chart: {
-            width: 450,
+            width: 415,
           },
         },
       },
@@ -81,7 +80,7 @@ export function DonutChart({ data }: PropsType) {
         breakpoint: 370,
         options: {
           chart: {
-            width: 280,
+            width: 260,
           },
         },
       },
@@ -96,4 +95,3 @@ export function DonutChart({ data }: PropsType) {
     />
   );
 }
-

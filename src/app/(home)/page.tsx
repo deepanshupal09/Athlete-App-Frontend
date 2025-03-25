@@ -1,5 +1,5 @@
 import { HeartRateGraph } from "@/components/Charts/payments-overview";
-import { UsedDevices } from "@/components/Charts/used-devices";
+import { BalancedDiet } from "@/components/Charts/used-devices";
 import { WeeksProfit } from "@/components/Charts/weeks-profit";
 import { TopChannels } from "@/components/Tables/top-channels";
 import { TopChannelsSkeleton } from "@/components/Tables/top-channels/skeleton";
@@ -9,11 +9,18 @@ import { ChatsCard } from "./_components/chats-card";
 import { OverviewCardsGroup } from "./_components/overview-cards";
 import { OverviewCardsSkeleton } from "./_components/overview-cards/skeleton";
 import { RegionLabels } from "./_components/region-labels";
+import { TodoCard } from "./_components/overview-cards/todo";
+import { ArrowUpIcon } from "@/assets/icons";
 
 type PropsType = {
   searchParams: Promise<{
     selected_time_frame?: string;
   }>;
+};
+const sampleTask = {
+  title: "Complete UI Design",
+  dueDate: "2025-03-30",
+  status: "In Progress" as "In Progress" | "Pending" | "Completed",
 };
 
 export default async function Home({ searchParams }: PropsType) {
@@ -39,7 +46,7 @@ export default async function Home({ searchParams }: PropsType) {
           className="col-span-12 xl:col-span-5"
         />
 
-        <UsedDevices
+        <BalancedDiet
           className="col-span-12 xl:col-span-5"
           key={extractTimeFrame("used_devices")}
           timeFrame={extractTimeFrame("used_devices")?.split(":")[1]}
@@ -48,9 +55,10 @@ export default async function Home({ searchParams }: PropsType) {
         <RegionLabels />
 
         <div className="col-span-12 grid xl:col-span-8">
-          <Suspense fallback={<TopChannelsSkeleton />}>
+          {/* <Suspense fallback={<TopChannelsSkeleton />}>
             <TopChannels />
-          </Suspense>
+          </Suspense> */}
+          <TodoCard task={sampleTask} Icon={ArrowUpIcon} />;
         </div>
 
         <Suspense fallback={null}>
