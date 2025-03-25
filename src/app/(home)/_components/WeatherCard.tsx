@@ -44,7 +44,7 @@ export function WeatherCard({ className }: { className?: string }) {
   }, []);
 
   return (
-    <div className={cn("rounded-[10px] sky-gradient-14 p-6 shadow-1", className)}>
+    <div className={cn("rounded-[10px] sky-gradient-15 p-6 shadow-1", className)}>
       <div className="inline-flex space-x-4 items-start">
         <Weather />
         <div className="text-2xl text-gray-200 font-semibold">
@@ -52,7 +52,6 @@ export function WeatherCard({ className }: { className?: string }) {
             New Delhi
           </div>
           <div className="text-xl text-gray-300">India</div>
-
         </div>
       </div>
 

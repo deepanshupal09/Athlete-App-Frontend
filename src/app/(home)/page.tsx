@@ -1,6 +1,6 @@
 import { HeartRateGraph } from "@/components/Charts/payments-overview";
 import { BalancedDiet } from "@/components/Charts/used-devices";
-import { WeeksProfit } from "@/components/Charts/weeks-profit";
+import { Sleep } from "@/components/Charts/sleep";
 import { TopChannels } from "@/components/Tables/top-channels";
 import { TopChannelsSkeleton } from "@/components/Tables/top-channels/skeleton";
 import { createTimeFrameExtractor } from "@/utils/timeframe-extractor";
@@ -41,7 +41,7 @@ export default async function Home({ searchParams }: PropsType) {
           timeFrame={extractTimeFrame("payments_overview")?.split(":")[1]}
         />
 
-        <WeeksProfit
+        <Sleep
           key={extractTimeFrame("weeks_profit")}
           timeFrame={extractTimeFrame("weeks_profit")?.split(":")[1]}
           className="col-span-12 xl:col-span-5"

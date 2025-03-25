@@ -78,50 +78,50 @@ export async function getHeartRateData(
   };
 }
 
-export async function getWeeksProfitData(timeFrame?: string) {
+export async function getWeeksSleepData(timeFrame?: string) {
   // Fake delay
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   if (timeFrame === "last week") {
     return {
-      sales: [
-        { x: "Sat", y: 33 },
-        { x: "Sun", y: 44 },
-        { x: "Mon", y: 31 },
-        { x: "Tue", y: 57 },
-        { x: "Wed", y: 12 },
-        { x: "Thu", y: 33 },
-        { x: "Fri", y: 55 },
+      sleep: [
+        { x: "Sat", y: 8 },
+        { x: "Sun", y: 6 },
+        { x: "Mon", y: 7 },
+        { x: "Tue", y: 10 },
+        { x: "Wed", y: 5 },
+        { x: "Thu", y: 6 },
+        { x: "Fri", y: 9 },
       ],
-      revenue: [
-        { x: "Sat", y: 10 },
-        { x: "Sun", y: 20 },
+      awake: [
+        { x: "Sat", y: 16 },
+        { x: "Sun", y: 18 },
         { x: "Mon", y: 17 },
-        { x: "Tue", y: 7 },
-        { x: "Wed", y: 10 },
-        { x: "Thu", y: 23 },
-        { x: "Fri", y: 13 },
+        { x: "Tue", y: 14 },
+        { x: "Wed", y: 19 },
+        { x: "Thu", y: 18 },
+        { x: "Fri", y: 15 },
       ],
     };
   }
 
   return {
-    sales: [
-      { x: "Sat", y: 44 },
-      { x: "Sun", y: 55 },
-      { x: "Mon", y: 41 },
-      { x: "Tue", y: 67 },
-      { x: "Wed", y: 22 },
-      { x: "Thu", y: 43 },
-      { x: "Fri", y: 65 },
+    sleep: [
+      { x: "Sat", y: 8 },
+      { x: "Sun", y: 6 },
+      { x: "Mon", y: 7 },
+      { x: "Tue", y: 10 },
+      { x: "Wed", y: 5 },
+      { x: "Thu", y: 6 },
+      { x: "Fri", y: 9 },
     ],
-    revenue: [
-      { x: "Sat", y: 13 },
-      { x: "Sun", y: 23 },
-      { x: "Mon", y: 20 },
-      { x: "Tue", y: 8 },
-      { x: "Wed", y: 13 },
-      { x: "Thu", y: 27 },
+    awake: [
+      { x: "Sat", y: 16 },
+      { x: "Sun", y: 18 },
+      { x: "Mon", y: 17 },
+      { x: "Tue", y: 14 },
+      { x: "Wed", y: 19 },
+      { x: "Thu", y: 18 },
       { x: "Fri", y: 15 },
     ],
   };
