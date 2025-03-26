@@ -2,6 +2,7 @@ import { PeriodPicker } from "@/components/period-picker";
 import { cn } from "@/lib/utils";
 import { getDevicesUsedData } from "@/services/charts.services";
 import { DonutChart } from "./chart";
+import { Diet } from "@/app/(home)/_components/icons";
 
 type PropsType = {
   timeFrame?: string;
@@ -22,8 +23,9 @@ export async function BalancedDiet({
       )}
     >
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <h2 className="text-body-2xlg font-bold text-dark dark:text-white">
-          Recommended Nutrition Breakdown
+        <h2 className="text-body-2xlg font-bold text-dark dark:text-white inline-flex items-center gap-x-4">
+          <Diet />
+          <div>Recommended Nutrition Breakdown</div>
         </h2>
 
         {/* <PeriodPicker defaultValue={timeFrame} sectionKey="used_devices" /> */}
