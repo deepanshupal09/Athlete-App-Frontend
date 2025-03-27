@@ -119,3 +119,13 @@ export async function getTopChannels() {
     },
   ];
 }
+export async function getPreventionData() {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  return [
+    { injury: "ACL Tear", risk: "High", prevention: "Strengthen quadriceps & hamstrings" },
+    { injury: "Hamstring Strain", risk: "Medium", prevention: "Dynamic stretching & hydration" },
+    { injury: "Shin Splints", risk: "Low", prevention: "Proper footwear & running technique" },
+  ];
+}
+
