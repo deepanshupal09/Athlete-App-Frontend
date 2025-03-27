@@ -20,11 +20,11 @@ export const NAV_DATA = [
           },
           {
             title: "Health",
-            url: "/Health",
+            url: "/health",
           },
           {
             title: "Injury",
-            url: "/Injury",
+            url: "/injury",
           },
         ],
       },
@@ -38,7 +38,7 @@ export const NAV_DATA = [
           },
           {
             title: "Find a coach",
-            url: "/coach",
+            url: "/findcoach",
           },
           {
             title: "Tutorial",
