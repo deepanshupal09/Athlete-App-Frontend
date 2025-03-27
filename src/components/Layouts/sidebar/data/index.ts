@@ -50,7 +50,7 @@ export const NAV_DATA = [
           },
           {
             title: "Financial",
-            url: "/finacial",
+            url: "/financial",
           },
           {
             title: "Schemes",
