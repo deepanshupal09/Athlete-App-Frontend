@@ -198,3 +198,17 @@ export async function getCostsPerInteractionData() {
     ],
   };
 }
+export async function getAchievementsData() {
+  return [
+    { year: "2015", local: 3, district: 0, junior: 0, national: 0 },
+    { year: "2016", local: 2, district: 1, junior: 1, national: 0 },
+    { year: "2017", local: 5, district: 2, junior: 1, national: 0 },
+    { year: "2018", local: 4, district: 3, junior: 2, national: 0 },
+    { year: "2019", local: 6, district: 3, junior: 2, national: 0 },
+    { year: "2020", local: 7, district: 3, junior: 3, national: 0 },
+    { year: "2021", local: 6, district: 5, junior: 4, national: 0 },
+    { year: "2022", local: 8, district: 5, junior: 5, national: 0 },
+    { year: "2023", local: 9, district: 6, junior: 6, national: 0 },
+    { year: "2024", local: 10, district: 7, junior: 7, national: 1 },
+  ];
+}
