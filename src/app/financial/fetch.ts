@@ -5,14 +5,14 @@ export async function getCardsData() {
     await new Promise((resolve) => setTimeout(resolve, 2000));
   
     return {
-      last: {
-        value: "2nd position at Reliance Trials",
+      income: {
+        value: "Rupees 50,000",
       },
-      highest: {
-        value: "Qualified for national team",
+      expenses: {
+        value: "Rupees 30,000",
       },
-      target: {
-        value: "TOPS",
+      savings: {
+        value: "Rupees 5000",
       },
     };
   }

@@ -212,3 +212,39 @@ export async function getAchievementsData() {
     { year: "2024", local: 10, district: 7, junior: 7, national: 1 },
   ];
 }
+
+export async function getMonthlyFinancialData(timeFrame?: string) {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  if (timeFrame === "Last Month") {
+    return {
+      income: [
+        { x: "Week 1", y: 5000 },
+        { x: "Week 2", y: 7000 },
+        { x: "Week 3", y: 6500 },
+        { x: "Week 4", y: 8000 },
+      ],
+      expenses: [
+        { x: "Week 1", y: 3000 },
+        { x: "Week 2", y: 4000 },
+        { x: "Week 3", y: 3500 },
+        { x: "Week 4", y: 5000 },
+      ],
+    };
+  }
+
+  return {
+    income: [
+      { x: "Week 1", y: 6000 },
+      { x: "Week 2", y: 7500 },
+      { x: "Week 3", y: 7000 },
+      { x: "Week 4", y: 8500 },
+    ],
+    expenses: [
+      { x: "Week 1", y: 3500 },
+      { x: "Week 2", y: 4200 },
+      { x: "Week 3", y: 4000 },
+      { x: "Week 4", y: 5200 },
+    ],
+  };
+}
