@@ -5,10 +5,15 @@ import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import { User, Dumbbell } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
+interface Message {
+  role: "user" | "bot";
+  content: string;
+}
+
 export default function Chatbot() {
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState("");
-  const chatRef = useRef(null);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [input, setInput] = useState<string>("");
+  const chatRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     chatRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -16,19 +21,23 @@ export default function Chatbot() {
 
   const sendMessage = async () => {
     if (!input.trim()) return;
-    const userMessage = { role: "user", content: input };
+    const userMessage: Message = { role: "user", content: input };
     setMessages((prev) => [...prev, userMessage]);
 
     try {
-      const response = await fetch("https://your-backend-url.com/chat", {
+      const response = await fetch("https://polo-cb.vercel.app/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: input }),
+        body: JSON.stringify({ userId: "user1", prompt: input }),
       });
       const data = await response.json();
-      setMessages((prev) => [...prev, { role: "bot", content: data.response }]);
+      const botMessage: Message = { role: "bot", content: data.response };
+      setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
-      setMessages((prev) => [...prev, { role: "bot", content: "Error fetching response" }]);
+      setMessages((prev) => [
+        ...prev,
+        { role: "bot", content: "Error fetching response" },
+      ]);
     }
 
     setInput("");
