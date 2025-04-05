@@ -42,7 +42,7 @@ export function AIHelpTable({ className }: { className?: string }) {
       ];
       setHelpData(mockData);
       setLoading(false);
-    }, 2000);
+    }, 500);
   }, []);
 
   return (
