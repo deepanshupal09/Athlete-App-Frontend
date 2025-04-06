@@ -85,7 +85,7 @@ const PredictionChart: React.FC = () => {
     <div className="col-span-12 rounded-[10px] bg-white px-7.5 pb-6 pt-7.5 shadow-1 dark:bg-gray-dark dark:shadow-card xl:col-span-7">
       <div className="mb-3.5 flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between">
         <h4 className="text-body-2xlg font-bold text-dark dark:text-white">
-          Athlete's Performance Analytics
+          {"Athlete's"} Performance Analytics
         </h4>
       </div>
       <div className="-ml-4 -mr-5">

@@ -1,21 +1,23 @@
 "use client";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { AchievementCard } from "./overview";
 import { Achievements } from "@/components/Charts/achievement_charts";
-
 
 export default function Page() {
   return (
     <>
       <Breadcrumb pageName="Achievements" />
       <div>
-        <AchievementCard />
+        <Suspense fallback={<div>Loading...</div>}>
+          <AchievementCard />
+        </Suspense>
       </div>
       <div className="mt-6">
-        <Achievements />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Achievements />
+        </Suspense>
       </div>
-
     </>
   );
 }
