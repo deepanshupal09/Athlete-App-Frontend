@@ -21,7 +21,7 @@ export async function OverviewCardsGroup() {
         label="Total Calories burnt"
         data={{
           ...profit,
-          value: "$" + compactFormat(profit.value),
+          value: compactFormat(profit.value),
         }}
         Icon={icons.Calories}
       />
@@ -39,7 +39,7 @@ export async function OverviewCardsGroup() {
         label="Water Intake"
         data={{
           ...users,
-          value: compactFormat(users.value),
+          value: compactFormat(users.value) + " l",
         }}
         Icon={icons.Water}
       />
