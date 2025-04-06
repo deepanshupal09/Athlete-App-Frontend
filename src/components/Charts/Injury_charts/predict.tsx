@@ -1,6 +1,8 @@
 import { ApexOptions } from "apexcharts";
 import React, { useState } from "react";
-import ReactApexChart from "react-apexcharts";
+import dynamic from "next/dynamic";
+
+const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const InjuryRecoveryChart: React.FC = () => {
   const categories = ["Day 1", "Week 1", "Week 2", "Week 3", "Week 4", "Full Recovery"];

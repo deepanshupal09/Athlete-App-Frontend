@@ -1,6 +1,6 @@
 "use client";
 
-import { useIsMobile } from "@/hooks/use-mobile";
+// import { useIsMobile } from "@/hooks/use-mobile";
 import type { ApexOptions } from "apexcharts";
 import dynamic from "next/dynamic";
 
@@ -15,7 +15,7 @@ const Chart = dynamic(() => import("react-apexcharts"), {
 });
 
 export function HeartRateChart({ data }: PropsType) {
-  const isMobile = useIsMobile();
+  // const isMobile = useIsMobile();
 
   const options: ApexOptions = {
     legend: {
@@ -56,7 +56,7 @@ export function HeartRateChart({ data }: PropsType) {
     ],
     stroke: {
       curve: "smooth",
-      width: isMobile ? 2 : 3,
+      width: 2,
     },
     grid: {
       strokeDashArray: 5,

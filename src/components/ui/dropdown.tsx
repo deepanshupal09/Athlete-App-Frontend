@@ -1,6 +1,5 @@
 "use client";
 
-import { useClickOutside } from "@/hooks/use-click-outside";
 import { cn } from "@/lib/utils";
 import { SetStateActionType } from "@/types/set-state-action-type";
 import {
@@ -34,7 +33,7 @@ type DropdownProps = {
 };
 
 export function Dropdown({ children, isOpen, setIsOpen }: DropdownProps) {
-  const triggerRef = useRef<HTMLElement>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === "Escape") {
@@ -43,17 +42,23 @@ export function Dropdown({ children, isOpen, setIsOpen }: DropdownProps) {
   };
 
   useEffect(() => {
-    if (isOpen) {
-      triggerRef.current = document.activeElement as HTMLElement;
+    if (typeof document === "undefined") return;
 
+    const previousActiveElement = document.activeElement as HTMLElement;
+    triggerRef.current = previousActiveElement;
+
+    if (isOpen) {
       document.body.style.pointerEvents = "none";
     } else {
       document.body.style.removeProperty("pointer-events");
-
       setTimeout(() => {
-        triggerRef.current?.focus();
+        previousActiveElement?.focus();
       }, 0);
     }
+
+    return () => {
+      document.body.style.removeProperty("pointer-events");
+    };
   }, [isOpen]);
 
   function handleClose() {
@@ -85,10 +90,28 @@ export function DropdownContent({
   className,
 }: DropdownContentProps) {
   const { isOpen, handleClose } = useDropdownContext();
+  const contentRef = useRef<HTMLDivElement>(null);
 
-  const contentRef = useClickOutside<HTMLDivElement>(() => {
-    if (isOpen) handleClose();
-  });
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        contentRef.current &&
+        !contentRef.current.contains(event.target as Node)
+      ) {
+        handleClose();
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, handleClose]);
 
   if (!isOpen) return null;
 

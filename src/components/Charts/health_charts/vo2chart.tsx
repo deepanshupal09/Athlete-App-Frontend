@@ -1,6 +1,8 @@
 import { ApexOptions } from "apexcharts";
 import React from "react";
-import ReactApexChart from "react-apexcharts";
+import dynamic from "next/dynamic";
+
+const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const VO2HeartRateChart: React.FC = () => {
   const heartRate = [60, 80, 100, 120, 140, 160, 180, 200]; // BPM
